@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #033b4a;
+    --secondary-color: #20c997;
+    --gray: #4a4a4d;
+    --bg-primary: #ecf0f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Saira', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Utilities Classes */
+.text-primary {
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--secondary-color);
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #15a076;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
