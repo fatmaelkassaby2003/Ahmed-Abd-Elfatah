@@ -1,66 +1,149 @@
 #services {
-    background: #00f4ab0c;
-    padding: 6rem 0;
+    padding: 100px 0;
+    background: #ffffff;
+    /* White Background */
+    position: relative;
+    overflow: hidden;
 }
 
-#services h2 {
-    font-size: 38px;
-    color: var(--primary-color);
+/* Header Styling */
+#services .section-header {
     text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
+    margin-bottom: 80px;
 }
 
-#services hr {
-    width: 100px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    border: none;
-    margin: 5px auto 0;
+#services .section-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #111;
+    /* Dark Text */
+    margin: 0 0 15px;
 }
 
-#services .heading img {
-    width: 55px;
-    margin-right: 10px;
+#services .highlight-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-#services .heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#services .section-subtitle {
+    color: #6b7280;
+    /* Darker Gray */
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-#services .row {
+/* Grid Layout */
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 4rem;
-    text-align: center;
-    column-gap: 2rem;
-    row-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
-#services .row .item {
-    background-color: #fff;
-    padding: 30px 15px;
-    max-width: 500px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    transition: all 0.3s ease;
+/* Service Card (Light Mode) */
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    /* Light Gray Border */
+    border-radius: 24px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    /* Subtle Shadow */
 }
 
-#services .row .item h3 {
-    color: var(--primary-color);
-    margin: 15px 0;
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #6366f1;
+    /* Primary Color Border on Hover */
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+    /* Colored Shadow */
 }
 
-#services .row .item p {
-    font-size: 14px;
+/* Icon Styling */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.08);
+    /* Very Light Purple bg */
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: 0.4s;
+    border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
-#services .row .item:hover {
-    transform: scale(1.04);
+.service-card:hover .icon-wrapper {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    transform: scale(1.1) rotate(3deg);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
-#services .row img {
-    max-width: 90px;
+.icon-wrapper i {
+    font-size: 24px;
+    color: #6366f1;
+    /* Indigo Color */
+    transition: 0.4s;
+}
+
+.service-card:hover .icon-wrapper i {
+    color: #fff;
+}
+
+/* Typography */
+.service-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    /* Dark Gray */
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #6b7280;
+    /* Medium Gray */
+    line-height: 1.7;
+    margin: 0;
+    transition: 0.3s;
+}
+
+/* Hover Gradient Glow (Subtle on white) */
+.card-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.service-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 36px;
+    }
 }

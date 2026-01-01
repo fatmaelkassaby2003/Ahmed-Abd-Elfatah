@@ -1,56 +1,154 @@
 #skills {
-    background-color: var(--primary-color);
-    padding: 6rem 0;
+    padding: 60px 0 100px;
+    /* Reduced top padding */
+    background: #050505;
+    position: relative;
+    overflow: hidden;
 }
 
-#skills h2 {
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 38px;
+/* Section Header */
+.section-header {
     text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
+    margin-bottom: 80px;
 }
 
-#skills hr {
-    width: 100px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    border: none;
-    margin: 5px auto 0;
+.section-header .subtitle {
+    display: inline-block;
+    color: #6366f1;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-#skills .skills-content {
-    margin-top: 2rem;
-    background-color: #0f272d;
+.section-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    /* My is White */
+    margin: 0;
 }
 
-#skills .skills-content .row {
+.section-header .highlight-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    /* Experience is Gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Grid Layout */
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Skill Card */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
 }
 
-#skills .skills-content .row .item {
-    color: #fff;
-    background-color: #000;
-    margin: 20px;
-    padding: 1rem;
-    border-radius: 10px;
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: transparent;
+    /* Hide base border on hover */
+}
+
+/* Colored Border - Visible ONLY on Hover */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--skill-color);
+    opacity: 0;
+    /* Hidden by default */
+    transition: 0.4s;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+    /* Visible on Hover */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Inner shadow for depth */
+}
+
+/* Icon Box - Always Colored */
+.icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    position: relative;
+    z-index: 2;
+    background: var(--skill-color);
+    box-shadow: 0 0 30px var(--skill-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: 0.4s;
+}
+
+.icon-box img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    filter: grayscale(0) brightness(1) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+/* Skill Name - Always White */
+.skill-card h3 {
     font-size: 18px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 2;
 }
 
-#skills .skills-content .row .item:nth-child(2) img {
-    max-width: 50px;
+/* Bottom Glow - Subtle by default */
+.glow-effect {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: var(--skill-color);
+    filter: blur(60px);
+    opacity: 0.2;
+    transition: 0.5s;
+    border-radius: 50%;
 }
 
-#skills .skills-content .row .item:hover {
-    box-shadow: 10px 10px 10px #00f4ab0c;
+.skill-card:hover .glow-effect {
+    opacity: 0.5;
+    bottom: -30px;
 }
 
-#skills .row img {
-    max-width: 40px;
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

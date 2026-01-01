@@ -2,18 +2,24 @@ import './Navbar.css'
 
 const Navbar = () => {
     return (
-        <div className="navbar">
-            <nav>
-                <a href="#home" id="logo">Ahmed Abd ElFattah</a>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav className="navbar-float">
+            <div className="container nav-inner">
+                <a href="#" className="brand">
+                    A<span className="brand-dot">.</span>
+                </a>
+
+                <div className="nav-menu">
+                    <a href="#home" className="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <a href="#contact" className="btn-chat">
+                    Let's Talk <i className="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </nav>
     )
 }
 
