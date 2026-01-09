@@ -3,26 +3,27 @@ import './Portfolio.css'
 const Portfolio = () => {
     const projects = [
         {
-            img: '/img/Screenshot (98).png',
-            title: 'Clothes Store',
-            description: 'A modern e-commerce platform for fashion, featuring product filtering, cart management, and secure checkout integration.',
+            img: '/img/abstracteg.png',
+            title: 'Abstracteg',
+            description: 'Comprehensive project management platform for planning, tracking projects, and managing partnership posts with collaborative features.',
             tech: ['Laravel', 'MySQL', 'Bootstrap'],
-            link: 'https://github.com/fatmaelkassaby2003/Task9/tree/main/Task9/mytask'
+            link: 'https://www.abstracteg.com/'
         },
         {
-            img: '/img/Screenshot (99).png',
-            title: 'Al-Zahraa Store',
-            description: 'Full-stack online store application with admin dashboard for inventory management and user order tracking.',
-            tech: ['PHP', 'JavaScript', 'CSS3'],
-            link: 'https://github.com/fatmaelkassaby2003/Task9/tree/main/Task9/mytask'
+            img: '/img/mdizon.png',
+            title: 'Mdizon E-Commerce',
+            description: 'Comprehensive e-commerce platform featuring product management, shopping cart, payment integration, and admin dashboard.',
+            tech: ['Laravel', 'MySQL', 'Bootstrap'],
+            link: 'https://mdizon.com.eg/'
         },
         {
-            img: '/img/Screenshot (100).png',
-            title: 'Wassel Delivery',
-            description: 'Delivery service landing page designed for speed and conversion, optimized for mobile responsiveness.',
-            tech: ['HTML5', 'SASS', 'jQuery'],
-            link: '#'
+            img: '/img/khtowat.png',
+            title: 'Khtowat',
+            description: 'Professional training platform specializing in food safety, quality management, and certification courses with interactive learning modules.',
+            tech: ['Laravel', 'MySQL', 'Bootstrap'],
+            link: 'https://khtowat.net/en'
         }
+
     ]
 
     return (
